@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in user_list %}
+                        <tr>
+                            <td>{{ row.pk }}</td>
+                            <td>{{ row.name }}</td>
+                            <td>{{ row.pwd }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <ul class="pagination">
+                {{ page_html }}
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
